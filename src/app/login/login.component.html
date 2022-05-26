@@ -1,0 +1,73 @@
+<!-- <div class="container">
+    <form [formGroup] = "form" (submit)="submit()">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</div> -->
+
+
+<!--For all screen-->
+
+
+<div class="page">
+  
+
+
+  <!--Login & Signup in single row-->
+  <div class="row">
+  
+    
+  <!--Column for signin-->
+    <div class="col-sm-8 text-center signin">
+  
+  
+      <!-- Default form login -->
+      <form action="#!">
+        <p class="h4 mb-4 text-center signintext top"><strong>Sign in to this Website</strong></p>
+  
+  <!--Login with Social Media Buttons-->
+  <div class="social-btn text-center">
+        <a href="#" class="btn btn-primary btn-lg" title="Facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="btn btn-info btn-lg" title="Twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="btn btn-danger btn-lg" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+      </div>
+  
+        <p class="text-center signintext">Or use your Email account</p>
+        <form>
+        <!-- Email -->
+        <input type="email" name="email" [(ngModel)]="email" class="form-control mb-4"  placeholder="&#xf0e0; Email" style="font-family:Arial, FontAwesome">
+  
+        <!-- Password -->
+        <input type="password" name="pass" [(ngModel)]="pass" class="form-control mb-4" placeholder="&#xf023;  Password" style="font-family:Arial, FontAwesome">
+  
+       
+  
+        <!-- Sign in button -->
+              <a class="ForgotPassBtn" href="" >Forgot Your Password?</a>
+              <button (click)="login(email,pass)" class="btn btn-primary">Submit</button>
+            </form>
+      </form>
+  
+    </div>
+  
+  <!--Column for signin-->
+    <div class="col-sm-4 signup text-center">
+      <h2 class="HelloFriend">Hello, Friend!</h2>
+      <h4 class="SignupText">Enter your personal details<br>and start journey with us</h4>
+      <button  routerLink="/register" class="btn btn-info btn-block signupbtn" type="submit">SIGN UP</button>
+  
+    </div>
+  </div>
+
+  </div>
+
+
+

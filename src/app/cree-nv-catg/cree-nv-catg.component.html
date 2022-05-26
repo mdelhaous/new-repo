@@ -1,0 +1,15 @@
+
+  <div class="container">  
+    <form >
+   
+      <label for="fname">name</label><br>
+      <input type="text" [(ngModel)]="name" name="name"><br> 
+      <label for="fname">image</label><br>
+      <div class="form-group">
+        <label class="control-label">image</label>
+        <input type="file" (change)="onSelectImage($event)" class="form-control" >
+      </div>
+      <td><button (click)="Ajouter(name)" class="btn btn-primary" >Ajouter</button></td>
+    </form>
+  </div>
+

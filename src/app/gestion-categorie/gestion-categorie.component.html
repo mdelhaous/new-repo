@@ -1,0 +1,55 @@
+<li>
+    <td><button routerLink="/NouvCatg"class="btn btn-primary">Ajouter une nouvelle catégorie</button></td>
+</li>>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">catégorie</th>
+        <th scope="col">image</th>
+        <th scope="col">opérations</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let category of categories">
+      <tr *ngFor="let item of category">
+        <th scope="row">{{item.id}}</th>
+        
+          <a class="nav-link" routerLink="/GestArt/{{item.id}}">{{item.name}}<span class="sr-only"></span></a>
+      
+        <td>{{item.image}}</td>
+        <td>
+          <button  (click)="SupprimerCatg(item.id)" class="btn btn-danger">Supprimer </button>
+          <br>
+          <br>
+          <button (click)="open(mymodal)" (click)="getCat(item.id)" class="btn btn-primary">Modifier </button>
+        </td>
+        <br>
+        
+  
+      </tr>
+  
+    </tbody>
+    
+  </table>
+
+
+
+  <ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Modfier cette catégorie</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form >
+        <input type="text" [(ngModel)]="name" name="name">
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-primary" (click)="update()">Modifier</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+    </div>
+  </ng-template>
+
+  

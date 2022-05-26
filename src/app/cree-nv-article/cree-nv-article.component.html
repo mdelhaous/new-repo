@@ -1,0 +1,50 @@
+
+<form >
+    <label for="fname">prix</label><br>
+    <input type="text" [(ngModel)]="prix" name="prix"><br>
+    <label for="fname">name</label><br>
+    <input type="text" [(ngModel)]="name" name="name"><br>
+    <label for="fname">descriptif</label><br>
+    <input type="text" [(ngModel)]="descriptif" name="descriptif"><br>
+    <div class="form-group">
+      <label class="control-label">image</label>
+      <input type="file" (change)="onSelectImage($event)" class="form-control" >
+    </div>
+    <td><button (click)="Ajouter(prix,name,descriptif)" class="btn btn-primary" >Ajouter</button></td>
+  </form>   
+
+ 
+   <!-- <div class="container">  
+    <form id="contactus" action="" method="post">
+      <h3>ajouter un article</h3>
+      
+      <fieldset>
+        <label for="fname">prix</label><br>
+        <input type="text" [(ngModel)]="prix" name="prix"><br>
+      </fieldset>
+      <fieldset>
+        <label for="fname">name</label><br>
+        <input type="text" [(ngModel)]="name" name="name"><br>
+      </fieldset>
+      <fieldset>
+        <label for="fname">descriptif</label><br>
+        <input type="text" [(ngModel)]="descriptif" name="descriptif"><br>
+      </fieldset>
+      <fieldset>
+        <label for="fname">categorie</label><br>
+    <div >
+        <select [(ngModel)]="cat_id" name="cat_id">
+            <option *ngFor="let item of categories" [value]="item.id">
+                {{item.name}}
+            </option>
+        </select>
+    </div>
+      </fieldset>
+     
+      
+        <button (click)="Ajouter(prix,name,descriptif,cat_id)" name="submit" type="submit" id="contactus-submit" data-submit="...Sending">Ajouter</button>
+      
+    </form>
+  </div>  -->
+
+   

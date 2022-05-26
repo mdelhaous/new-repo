@@ -1,0 +1,70 @@
+<li>
+    <td><button (click)="ajouerArticle()" class="btn btn-primary">Ajouter Article</button></td>
+</li>>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">prix</th>
+        <th scope="col">descriptif</th>
+        <th scope="col">categorie_id</th>
+        <th scope="col">image</th>
+        <th scope="col">opérations</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of articles">
+      <tr >
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.prix}}</td>
+        <td>{{item.descriptif}}</td>
+        <td>{{item.categorie_id}}</td>
+        <td><img src="../../assets/images/{{item.image}}" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"></td>
+        <td>
+          <button  class="btn btn-danger" (click)="SupprimerArticle(item.id)">Supprimer</button>
+          <br>
+          <br>
+          <button (click)="open(mymodal)" (click)="getart(item.id)" class="btn btn-primary">Modifier</button>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>  
+
+
+
+
+  <ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Update</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form >
+        <label for="fname">name</label><br>
+        <input type="text" [(ngModel)]="name" name="name"><br>
+        <label for="fname">prix</label><br>
+        <input type="text" [(ngModel)]="prix" name="prix"><br>
+        <label for="fname">descriptif</label><br>
+        <input type="text" [(ngModel)]="descriptif" name="descriptif"><br>
+        <label for="fname">categorie_id</label><br>
+        <input type="text" [(ngModel)]="categorie_id" name="categorie_id"><br>
+        <label for="fname">image</label><br>
+        <input type="text" [(ngModel)]="image" name="image">
+
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-primary" (click)="update()">Modifier</button>
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+    </div>
+  </ng-template>
+
+
+
+
+
+

@@ -1,0 +1,93 @@
+<!-- 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">catégorie</th>
+      <th scope="col">image</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let category of categories">
+    <tr *ngFor="let item of category">
+      <th scope="row">{{item.id}}</th>
+      
+        <a class="nav-link" routerLink="/article/{{item.id}}">{{item.name}}<span class="sr-only"></span></a>
+    
+      <td>{{item.image}}</td>
+
+    </tr>
+
+  </tbody>
+</table> -->
+
+
+
+<!-- 
+<div class="container py-5">
+  <div class="row text-center text-white mb-5">
+      <div class="col-lg-7 mx-auto">
+          <h1 class="display-4">Product List</h1>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-lg-8 mx-auto">
+          
+          <ul class="list-group shadow">
+              
+              <tbody *ngFor="let item of articles">
+              <li class="list-group-item">
+                  
+                  <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                      <div class="media-body order-2 order-lg-1">
+                        <a class="nav-link" routerLink="/article/{{item.id}}">{{item.name}}<span class="sr-only"></span></a>
+                          <div class="d-flex align-items-center justify-content-between mt-1">
+                              <ul class="list-inline small">
+                                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                  <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                  <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                              </ul>
+                          </div>
+                      </div><img src="../../assets/images/{{item.image}}" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                  </div> 
+
+              
+              </li> 
+            </tbody>
+          </ul> 
+      </div>
+    
+  </div>
+
+</div>  -->
+
+<div class="container mt-100">
+                            		
+
+  <tbody *ngFor="let category of categories">
+    <tr >                          	
+                                  
+      <div class="row">
+        <div class="col-md-4 col-sm-6" *ngFor="let item of category">
+          <div class="card mb-30">
+            <a class="card-img-tiles" href="#" data-abc="true">
+            <div class="inner">
+              
+            <div  class="main-img" >
+              
+              <img  src="../../assets/images/{{item.image}}" alt="Category">
+              
+            </div>
+
+            </div></a>
+            <div class="card-body text-center">
+              <a class="nav-link" routerLink="/article/{{item.id}}">{{item.name}}<span class="sr-only"></span></a>
+
+            </div>  
+          </div>
+        </div>
+      </div>
+    </tr>
+</tbody>
+</div>

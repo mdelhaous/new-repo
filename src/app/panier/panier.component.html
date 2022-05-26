@@ -1,0 +1,109 @@
+<!-- <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">name</th>
+        <th scope="col">prix</th>
+        <th scope="col">descriptif</th>
+        <th scope="col">categorie_id</th>
+        <th scope="col">image</th>
+        <th scope="col">opérations</th>
+      </tr>
+    </thead>
+
+
+    <tbody *ngFor="let article of articles">
+      <tr *ngFor="let item of article">
+        <td>{{  item.id   }}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.prix}}</td>
+        <td>{{item.descriptif}}</td>
+        <td>{{item.categorie_id}}</td>
+        <td>{{item.image}}</td>
+        <td>
+
+          <button  class="btn btn-primary">Acheter</button>
+          <br>
+          <br>
+          <button  class="btn btn-danger">Supprimer</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>   -->
+
+
+  <!-- 
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">id_article</th>
+      <th scope="col">name</th>
+      <th scope="col">prix</th>
+      <th scope="col">descriptif</th>
+      <th scope="col">categorie_id</th>
+      <th scope="col">image</th>
+      <th scope="col">opérations</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of articles">
+    <tr >
+      <td>{{item.id_article}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.prix}}</td>
+      <td>{{item.descriptif}}</td>
+      <td>{{item.categorie_id}}</td>
+      <td>{{item.image}}</td>
+      <td><button (click)="AjouterAuPanier(item.id_article)" class="btn btn-primary">Ajouter au panier</button></td>
+    </tr>
+  </tbody>
+</table>  -->
+
+ <div class="container py-5">
+  <div class="row text-center text-white mb-5">
+      <div class="col-lg-7 mx-auto">
+          <h1 class="display-4">Product List</h1>
+      </div>
+  </div>
+  <div class="row" >
+      <div class="col-lg-8 mx-auto" >
+          
+          <ul class="list-group shadow">
+             
+            <tbody *ngFor="let item of articles">
+                <li class="list-group-item" *ngFor="let it of item" >
+                    
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3" >
+                        <div class="media-body order-2 order-lg-1" >
+                            <h5 class="mt-0 font-weight-bold mb-2">{{it.name}}</h5>
+                            <p class="font-italic text-muted mb-0 small">{{it.descriptif}}</p>
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <h6 class="font-weight-bold my-2">{{it.prix}}</h6>
+                                
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                </ul>
+                            </div>
+                        </div><img src="../../assets/images/{{it.image}}" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                        <td><button  class="btn btn-primary">Acheter</button>
+                          <br>
+                          <br>
+                        <!-- <button  (click)="(item.id)" class="btn btn-danger">Supprimer </button> -->
+                        <button  (click)="supparticles(it.id)" class="btn btn-danger">Supprimer </button>
+                        </td>
+  
+                    </div> 
+  
+                
+              </li> 
+            </tbody>
+          </ul> 
+      </div>
+    
+  </div>
+
+</div>  
